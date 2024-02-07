@@ -54,43 +54,38 @@ body {
     vertical-align: center;
     text-align: start;
 }
-.conteudo section{
-    display: flex;
-    flex-direction: column;
-    border-radius: 10px;
-    gap: 2rem;
-}
-.conteudo div{
-    width: 100%;
-}
-h1{
+.conteudo .titulo h1{
     display: flex;
     align-items: center;
-    gap: 25px;
-    font-size: 36pt;
-    font-weight: 700;
+    gap: 1.5rem;
     color: var(--DarkPurple);
 }
-.pergunta{
+.conteudo details{
+    border-radius: 10px;
+    gap: 2rem;
+    width: 100%;
+    font-weight: 400;
+    color: var(--GrayishPurple);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px var(--LightPink) solid;
+}
+/* .conteudo details [open]{
+
+} */
+.conteudo summary{
     display: flex;
     align-items: center;
     justify-content: space-between;
     color: var(--DarkPurple);
     font-weight: 600;
-}
-.pergunta:hover{
-    color: rgb(205, 10, 220);
     cursor: pointer;
 }
-.resposta{
-    font-weight: 400;
-    color: var(--GrayishPurple);
+.conteudo summary::marker{
+    content: none;
 }
-hr {
-    border: 1px var(--LightPink) solid;
-}
-.off {
-    display: none;
+.conteudo summary:hover{
+    color: rgb(205, 10, 220);
 }
 .attribution { 
     width: 100%;
