@@ -76,6 +76,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding-right: 31px;
     margin-bottom: 1rem;
     color: var(--DarkPurple);
     background-image: url(../assets/images/icon-plus.svg);
@@ -85,9 +86,8 @@ body {
     font-weight: 600;
     cursor: pointer;
 }
-.resposta{
-    font-weight: 400;
-    color: var(--GrayishPurple);
+.conteudo details[open] summary{
+    background-image: url(../assets/images/icon-minus.svg);
 }
 .conteudo summary:hover{
     color: rgb(205, 10, 220);
