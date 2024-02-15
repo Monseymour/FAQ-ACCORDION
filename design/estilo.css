@@ -86,9 +86,6 @@ h1{
     font-weight: 400;
     color: var(--GrayishPurple);
 }
-hr {
-    border: 1px var(--LightPink) solid;
-}
 .off {
     display: none;
 }
@@ -99,4 +96,22 @@ hr {
 }
 .attribution a { 
 color: var(--GrayishPurple);
+}
+@media (max-width: 700px){
+    .conteudo{
+        width: 25rem;
+    }
+    .pergunta:hover{
+        color: var(--GrayishPurple);
+    }
+}
+@media (max-width: 500px){
+    .conteudo{
+        width: 18rem;
+    }
+}
+@media (max-width: 400px){
+    .conteudo{
+        width: 15rem;
+    }
 }
