@@ -1,27 +1,18 @@
-const summaries = Array.from(document.querySelectorAll("summary"));
-const detail = document.querySelectorAll("details");
-const imagens = Array.from(document.querySelectorAll(".icones"));
+//  Variavel indicando o Elemento HTML
+const detailsElements = document.querySelectorAll('details');
 
-//  Trocar Icones
-summaries.forEach((summary, indice) => {
-    summary.addEventListener("click", () => {
-        imagens.forEach(icones =>{
-            icones.src = "./assets/images/icon-plus.svg"
+//  Adicionar uma função para cada Elemento
+detailsElements.forEach(details => {
+    // Função para reconhecer qual Elementos esta aberto
+    details.addEventListener('toggle', () => {
+        //  Se aberto, separar elementos diferente do que foi recentemente aberto
+        if (details.open) {
+        detailsElements.forEach(otherDetails => {
+            //  Para todos Elementos diferentes do aberto, fechar.
+            if (otherDetails !== details) {
+            otherDetails.open = false;
+            }
         });
-        let imagem = imagens[indice];
-        imagem.src = "./assets/images/icon-minus.svg";
+        }
     });
-});
-//  Ocultar Sumarios
-detail.forEach(d, () => {
-    d.addEventListener("click", () => { 
-        d.addEventListener('toggle', () => {
-            if (d.open) {
-              detail.forEach(otherDetails => {
-                if (otherDetails !== details) {
-                  otherDetails.open = false;
-                }}
-            )}
-        })
-    })
 });
