@@ -1,24 +1,18 @@
-const botoes = Array.from(document.querySelectorAll("section"));
-const perguntas = Array.from(document.querySelectorAll(".pergunta"));
-const respostas = Array.from(document.querySelectorAll(".resposta"));
-const imagens = Array.from(document.querySelectorAll(".icones"));
+//  Variavel indicando o Elemento HTML
+const detailsElements = document.querySelectorAll('details');
 
-//  Ocultar 
-botoes.forEach((botao, indice) => {
-    botao.addEventListener("click", () => {
-        // Icones
-        imagens.forEach(icones =>{
-            icones.src = "./assets/images/icon-plus.svg"
+//  Adicionar uma função para cada Elemento
+detailsElements.forEach(details => {
+    // Função para reconhecer qual Elementos esta aberto
+    details.addEventListener('toggle', () => {
+        //  Se aberto, separar elementos diferente do que foi recentemente aberto
+        if (details.open) {
+        detailsElements.forEach(otherDetails => {
+            //  Para todos Elementos diferentes do aberto, fechar.
+            if (otherDetails !== details) {
+            otherDetails.open = false;
+            }
         });
-        let imagem = imagens[indice];
-        imagem.src = "./assets/images/icon-minus.svg";
+        }
     });
 });
-
-function mostrar(IdResposta){
-    const mostrando = document.getElementById(IdResposta);
-        respostas.forEach(resp =>{
-            resp.classList.add("off")
-        });
-        mostrando.classList.remove("off");
-};
