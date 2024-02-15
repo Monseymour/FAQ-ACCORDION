@@ -66,23 +66,27 @@ body {
     width: 100%;
     font-weight: 400;
     color: var(--GrayishPurple);
-    padding-top: 1rem;
     padding-bottom: 1rem;
     border-bottom: 1px var(--LightPink) solid;
 }
-/* .conteudo details [open]{
-
-} */
+.conteudo details[open]{
+    padding-bottom: 2rem;
+}
 .conteudo summary{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    margin-bottom: 1rem;
     color: var(--DarkPurple);
+    background-image: url(../assets/images/icon-plus.svg);
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 31px;
     font-weight: 600;
     cursor: pointer;
 }
-.conteudo summary::marker{
-    content: none;
+.conteudo details[open] summary {
+    background-image: url(../assets/images/icon-minus.svg);
 }
 .conteudo summary:hover{
     color: rgb(205, 10, 220);
